@@ -35,7 +35,7 @@ class CodeReader:
 
     @staticmethod
     def readFromString(code: str) -> CodeStream:
-        return CodeStream(['\n' + line for line in code.split()])
+        return CodeStream([line + '\n' for line in code.split('\n')])
 
 
 class Token:
@@ -245,9 +245,8 @@ class Tokenizer:
 
 
 class TokenStream:
-    tokenStream: list = []
-
     def __init__(self, codeStream: CodeStream) -> None:  # codeStream object must have an interface named '__getitem__'
+        self.tokenStream: list = list()
         for codeLine in codeStream:
             self.tokenStream.extend(Tokenizer.toToken(codeLine))
 
@@ -261,6 +260,4 @@ class TokenStream:
         return '[' + ',\n'.join([repr(token) for token in self.tokenStream]) + ']'
 
 
-if __name__ == '__main__':
-    ts = TokenStream(CodeReader.readFromFile(r"example.c"))
-    print(ts)
+
