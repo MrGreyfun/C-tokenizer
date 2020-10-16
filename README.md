@@ -4,7 +4,7 @@ A C language tokenizer implemented by pure Python, can be used to tokenize C cod
 # example
 
 ## tokenize code from string
-```
+```Python
 codeString = '''
 int main()
 {
@@ -19,6 +19,7 @@ print(tokenStream)
 ```
 
 ###output
+```
 [(typeof = 5 (NEWLINE), string = '\n'),
 (typeof = 2 (NAME), string = 'int'),
 (typeof = 2 (NAME), string = 'main'),
@@ -51,11 +52,11 @@ print(tokenStream)
 (typeof = 1 (OP), string = '}'),
 (typeof = 5 (NEWLINE), string = '\n'),
 (typeof = 5 (NEWLINE), string = '\n')]
-
+```
 
 
 ## tokenize code from file
-```
+```Python
 from c_tokenizer import *
 
 codeStream = CodeReader.readFromFile(path="example.c") # replace it with you own file path
