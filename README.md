@@ -5,6 +5,8 @@ A C language tokenizer implemented by pure Python, can be used to tokenize C cod
 
 ## tokenize code from string
 ```Python
+from c_tokenizer import *
+
 codeString = '''
 int main()
 {
