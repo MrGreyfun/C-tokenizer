@@ -20,7 +20,7 @@ tokenStream = TokenStream(codeStream)
 print(tokenStream)
 ```
 
-###output
+### output
 ```
 [(typeof = 5 (NEWLINE), string = '\n'),
 (typeof = 2 (NAME), string = 'int'),
